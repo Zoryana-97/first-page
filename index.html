@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>мій шлях у програмуванні</title>
+       <style>
+        body{font-family: arial,sans-serif;
+            background-color:#851b1b;
+        text-align: center;
+    padding: 50px;
+}
+    h1{color: #10bce7;
+    }
+    p{color: #ad1963;
+    font-size: 18px;}
+    img{width: 500px;
+    border-radius: 20px;
+box-shadow: 0 10px 25px 
+rgba(0, 0, 0, 0.5);
+display: block;
+margin:0 auto 20px auto;
+transition: transform 0.3s ease, box-shadow 0.3s ease;}
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px
+    rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+.my-button{
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #10bce7;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 05px 15px 
+    rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+.my-button:hover{
+    background-color: #0da4c2;
+    transform: scale(1.05);
+    box-shadow: 08px 20px
+    rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+       </style>
+        </head>
+        <script>
+            function showMessage(){
+                document.getElementById("message")
+                .innerText= "Ти на правильному шляху🐱‍🏍"
+            }
+        </script>
+        <script>
+            function changeBackground(){
+                //масив кольорів
+                const colors = ["#851b1b", "#10bce7", "#ad1963", "#0da4c2","#f4d03f"];
+                //обираємо випадковий
+                const randomColor = 
+                colors [Math.floor(Math.random() * 
+            colors.length)];
+            // міняємо фон body
+            document.body.style.backgroundColor=randomColor;
+            }
+        </script>
+        <body>
+            <h1>привіт світ</h1>
+            <p>я вчуся програмувати😁😒</p>
+            <img src="https://www.udacity.com/blog/wp-content/uploads/2021/01/Become-a-full-stack-web-developer_Blog-scaled.jpeg"
+            alt="майбутнє">
+            <a href="#" class="my-button" onclick="showMessage()">я стану веб розробницею!</a>
+            <a href="#" class="my-button" onclick="changeBackground()"> змінити фон сайту 🎨</a>
+            <p id="message"></p>
+        </body>
+    </html>
