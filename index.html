@@ -45,6 +45,18 @@ img:hover {
     box-shadow: 08px 20px
     rgba(0, 0, 0, 0.5);
     cursor: pointer;
+
+    .video-container{
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    .video-container iframe{
+        width: 100%;
+         height: 600px;
+         border-radius: 20px;
+    }
 }
        </style>
         </head>
@@ -66,13 +78,29 @@ img:hover {
             document.body.style.backgroundColor=randomColor;
             }
         </script>
+        <script>
+            function showGojo(){
+                document.getElementById("gojoVideo").style.display = "block";
+            }
+        </script>
         <body>
             <h1>привіт світ</h1>
             <p>я вчуся програмувати😁😒</p>
+            <div id="gojoVideo"
+            class="video-container"
+            style="display: none;>
+            <iframe 
+            src="https://vt.tiktok.com/ZSuC8ru5e/"
+            frameborder="0"
+            allowfullscreen>
+         </iframe>
+        </div>
+
             <img src="https://www.udacity.com/blog/wp-content/uploads/2021/01/Become-a-full-stack-web-developer_Blog-scaled.jpeg"
             alt="майбутнє">
             <a href="#" class="my-button" onclick="showMessage()">я стану веб розробницею!</a>
             <a href="#" class="my-button" onclick="changeBackground()"> змінити фон сайту 🎨</a>
+            <a href="#" class="my-button" onclick="showGojo()">Я обираю Ґоджо Сатору</a>
             <p id="message"></p>
         </body>
     </html>
