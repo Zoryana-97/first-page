@@ -125,7 +125,12 @@ img:hover {
         </script>
         <script>
             function showGojo(){
-                document.getElementById("gojoVideo").style.display = "block";
+            const container =
+                document.getElementById("gojoVideo");
+                const video = 
+                container.querySelector("video")
+                container.style.display = "block";
+                video.play();
             }
         </script>
         <body>
