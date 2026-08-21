@@ -81,6 +81,21 @@ img:hover {
          box-shadow: 0 5px 15px
          rgba(0, 0, 0, 0.4);
     }
+    .close-video {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10000;
+        padding: 10px 18px;
+        background-color: #10bce7;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
     @media  (max-width:600px) {
         body {
             padding: 15px;
@@ -130,7 +145,7 @@ img:hover {
             const container =
                 document.getElementById("gojoVideo");
                 const video = 
-                container.querySelector("video")
+                container.querySelector("video");
                 container.style.display = "block";
                 video.currentTime = 0;
                 video.play();
@@ -138,6 +153,25 @@ img:hover {
                     container.style.display = "none";
                 };
             }
+            function closeGojo(){
+                const container =
+                document.getElementById("gojoVideo");
+                const video = 
+                container.querySelector("video");
+                video.pause();
+                video.currentTime = 0;
+                container.style.display = "none";
+            }
+            document.addEventListener("keydown", function(event) {
+                const container = document.getElementById("gojoVideo");
+                if
+                (container.style.display === "block") {
+                    if (event.key === "Space"|| event.code === " Escape") {
+                        event.preventDefault();
+                        closeGojo();
+                    }
+                }
+            });
         </script>
         <body>
             <h1>привіт світ</h1>
@@ -145,6 +179,8 @@ img:hover {
             <div id="gojoVideo"
             class="video-container"
             style="display: none;">
+            <button class="close-video"
+            onclick="closeGojo()">&times;</button>
             <video width="100%" controls>
             <source src="gojo.mp4"
         type="video/mp4">
