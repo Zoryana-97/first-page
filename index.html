@@ -65,8 +65,8 @@ img:hover {
         position: fixed;
         top:0;
         left:0;
-        width: 100VW;
-        height: 100VH;
+        width: 100vw;
+        height: 100vh;
         max-width: none;
         margin: 0;
         z-index: 9999;
@@ -100,13 +100,6 @@ img:hover {
             width: auto;
             margin: 15px auto;
          }
-         .video-container {
-            width: 100%;
-         }
-         .video-container video {
-            width: 100%;
-            height: auto;
-         }
     }
        </style>
         </head>
@@ -139,7 +132,11 @@ img:hover {
                 const video = 
                 container.querySelector("video")
                 container.style.display = "block";
+                video.currentTime = 0;
                 video.play();
+                video.onended = function() {
+                    container.style.display = "none";
+                };
             }
         </script>
         <body>
