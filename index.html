@@ -116,9 +116,11 @@ img:hover {
                 //масив кольорів
                 const colors = ["#851b1b", "#10bce7", "#ad1963", "#0da4c2","#f4d03f"];
                 //обираємо випадковий
-                const randomColor = 
-                colors [Math.floor(Math.random() * 
-            colors.length)];
+                let randomColor;
+                do {
+                    randomColor = 
+                    cololrs[Math.floor(Math.random() * colors.length)];
+                } while (randomColor === document.body.style.backgroundColor);
             // міняємо фон body
             document.body.style.backgroundColor=randomColor;
             }
