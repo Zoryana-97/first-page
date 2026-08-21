@@ -62,18 +62,21 @@ img:hover {
     cursor: pointer;
 }
     .video-container{
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-        margin: 20px auto;
-        overflow: hidden;
-        border-radius: 20px;
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100VW;
+        height: 100VH;
+        max-width: none;
+        margin: 0;
+        z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.8);
     }
     .video-container video {
         width: 100%;
-         height: auto;
-         max-height: 600px;
-         border-radius: 20px;
+         height: 100%;
+         object-fit: contain;
+         border-radius: 0;
          display: block;
          box-shadow: 0 5px 15px
          rgba(0, 0, 0, 0.4);
