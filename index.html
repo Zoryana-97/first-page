@@ -142,20 +142,27 @@ img:hover {
         </script>
         <script>
             let gojoClick = 0;
+            let randomVideos = ["gojo.mp4", "gojo1.mp4", "gojo2.mp4"];
             function showGojo(){
             const container =
                 document.getElementById("gojoVideo");
                 const video = 
                 container.querySelector("video");
-                const videos = ["gojo.mp4", "gojo1.mp4", "gojo2.mp4", "gojo3.mp4"];
-                video.src = videos[gojoClick];
+                if (gojoClick < 3) {
+                    const randomNumber = Math.floor(Math.random() * randomVideos.length);
+                    video.src = randomVideos[randomNumber];
+                    randomVideos.splice(randomNumber, 1);
+                } else {
+                    video.src = "gojo3.mp4";
+                }
                 container.style.display = "block";
                 video.currentTime = 0;
                 video.play();
                 gojoClick++;
-                if (gojoClick >= videos.length) {
+                if (gojoClick >= 4) {
                     gojoClick = 0;
                 }
+                randomVideos = ["gojo.mp4", "gojo1.mp4", "gojo2.mp4"];
                 video.onended = function() {
                     container.style.display = "none";
                 };
