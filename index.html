@@ -119,39 +119,10 @@ img:hover {
                 let randomColor;
                 do {
                     randomColor = 
-                    cololrs[Math.floor(Math.random() * colors.length)];
+                    colors[Math.floor(Math.random() * colors.length)];
                 } while (randomColor === document.body.style.backgroundColor);
             // міняємо фон body
             document.body.style.backgroundColor=randomColor;
             }
         </script>
-        <script>
-            function showGojo(){
-            const container =
-                document.getElementById("gojoVideo");
-                const video = 
-                container.querySelector("video")
-                container.style.display = "block";
-                video.play();
-            }
-        </script>
-        <body>
-            <h1>привіт світ</h1>
-            <p>я вчуся програмувати😁😒</p>
-            <div id="gojoVideo"
-            class="video-container"
-            style="display: none;">
-            <video width="100%" controls>
-            <source src="gojo.mp4"
-        type="video/mp4">
-            </video>
-        </div>
-
-            <img src="https://www.udacity.com/blog/wp-content/uploads/2021/01/Become-a-full-stack-web-developer_Blog-scaled.jpeg"
-            alt="майбутнє">
-            <a href="#" class="my-button" onclick="showMessage()">я стану веб розробницею!</a>
-            <a href="#" class="my-button" onclick="changeBackground()"> змінити фон сайту 🎨</a>
-            <a href="javascript:void(0)" class="my-button" onclick="showGojo()">Я обираю Ґоджо Сатору</a>
-            <p id="message"></p>
-        </body>
-    </html>
+     
