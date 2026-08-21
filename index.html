@@ -141,14 +141,21 @@ img:hover {
             }
         </script>
         <script>
+            let gojoClick = 0;
             function showGojo(){
             const container =
                 document.getElementById("gojoVideo");
                 const video = 
                 container.querySelector("video");
+                const videos = ["gojo.mp4", "gojo1.mp4", "gojo2.mp4", "gojo3.mp4"];
+                video.src = videos[gojoClick];
                 container.style.display = "block";
                 video.currentTime = 0;
                 video.play();
+                gojoClick++;
+                if (gojoClick >= videos.length) {
+                    gojoClick = 0;
+                }
                 video.onended = function() {
                     container.style.display = "none";
                 };
@@ -182,8 +189,6 @@ img:hover {
             <button class="close-video"
             onclick="closeGojo()">&times;</button>
             <video width="100%" controls>
-            <source src="gojo.mp4"
-        type="video/mp4">
             </video>
         </div>
 
